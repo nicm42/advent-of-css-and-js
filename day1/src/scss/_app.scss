@@ -10,22 +10,44 @@
   );
   border-radius: 50%;
   box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
-  box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
   padding: 6.25em;
   position: relative;
   row-gap: 1.5em;
 }
 
+// Add box-shadow on before so it's below .border
 #app::before {
   content: '';
-  position: absolute;
-  border: 0.5em solid #000000;
-  border-left-color: variables.$red;
-  border-right-color: variables.$red;
-  border-top-color: variables.$red;
   border-radius: 50%;
+  box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
   inset: 0;
-  transform: rotate(325deg);
+  position: absolute;
+  z-index: -1;
+}
+
+.border {
+  border-radius: 50%;
+  height: calc(100% + 0.75em);
+  position: absolute;
+  width: calc(100% + 0.75em);
+  z-index: -1;
+
+  // https://stackoverflow.com/questions/42234855/is-it-possible-to-draw-a-partial-circle-outline-in-css-open-ring-shape
+  // https://stackoverflow.com/questions/40398592/how-to-set-different-colors-in-different-parts-of-stroke-in-html-svg
+  circle {
+    fill: none;
+    stroke-width: 0.75em;
+
+    &.black {
+      stroke: #000000;
+    }
+
+    &.red-green {
+      stroke: variables.$red;
+      stroke-dasharray: 250;
+      stroke-dashoffset: 425;
+    }
+  }
 }
 
 .timer {
