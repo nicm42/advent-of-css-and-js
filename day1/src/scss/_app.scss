@@ -1,4 +1,9 @@
+@use './mixins';
 @use './variables';
+
+#app {
+  @include mixins.centre;
+}
 
 .timer {
   width: max-content;

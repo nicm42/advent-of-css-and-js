@@ -1,3 +1,4 @@
+@use './mixins';
 @use './variables';
 
 @font-face {
@@ -10,10 +11,9 @@ html {
 }
 
 body {
+  @include mixins.centre;
   background-color: variables.$background-colour;
   color: #fff;
-  display: grid;
   font-family: 'Bebas Neue - Book', sans-serif;
   height: 100%;
-  place-items: center;
 }
