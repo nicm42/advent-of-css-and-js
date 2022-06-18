@@ -12,7 +12,7 @@ html {
 
 body {
   @include mixins.centre;
-  background-color: variables.$background-colour;
+  background-color: variables.$background;
   color: #fff;
   font-family: 'Bebas Neue - Book', sans-serif;
   height: 100%;
