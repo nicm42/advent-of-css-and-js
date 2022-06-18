@@ -1,5 +1,19 @@
 @use './variables';
 
+@font-face {
+  font-family: 'Bebas Neue - Book';
+  src: url('../../fonts/bebasneue-book-webfont.woff2');
+}
+
 html {
+  height: 100%;
+}
+
+body {
   background-color: variables.$background-colour;
+  color: #fff;
+  display: grid;
+  font-family: 'Bebas Neue - Book', sans-serif;
+  height: 100%;
+  place-items: center;
 }

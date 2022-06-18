@@ -1,0 +1,12 @@
+@use './variables';
+
+.timer {
+  width: max-content;
+}
+
+.start-stop {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: max-content;
+}
