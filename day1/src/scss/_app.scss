@@ -1,5 +1,6 @@
 @use './mixins';
 @use './variables';
+@use './breakpoints';
 
 #app {
   @include mixins.centre;
@@ -10,9 +11,20 @@
   );
   border-radius: 50%;
   box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
-  padding: 6.25em;
+  padding-block: 3.25em;
+  padding-inline: 4.25em;
   position: relative;
-  row-gap: 1.5em;
+  row-gap: 1em;
+
+  @include breakpoints.breakpoint-up(small) {
+    padding-block: 4.25em;
+    padding-inline: 4.75em;
+    row-gap: 1.5em;
+  }
+
+  @include breakpoints.breakpoint-up(medium) {
+    padding: 6.25em;
+  }
 }
 
 // Add box-shadow on before so it's below .border
@@ -51,9 +63,17 @@
 }
 
 .timer {
-  font-size: 12.25rem;
+  font-size: 4.25rem;
   line-height: 1;
   width: max-content;
+
+  @include breakpoints.breakpoint-up(small) {
+    font-size: 8.25rem;
+  }
+
+  @include breakpoints.breakpoint-up(medium) {
+    font-size: 12.25rem;
+  }
 }
 
 .start-stop {
