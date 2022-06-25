@@ -21,7 +21,8 @@ With the CSS I tried out alphabetical ordering.
 
 ## Screenshots
 
-TBC
+![Screenshot](screenshot-desktop.png)
+![Screenshot](screenshot-mobile.png)
 
 ## Technologies
 
