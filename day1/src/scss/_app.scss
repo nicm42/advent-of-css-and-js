@@ -76,6 +76,19 @@
   }
 }
 
+// Start stop and gear buttons
+button {
+  background: transparent;
+  border: none;
+  color: #585858;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
+
 .start-stop {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
@@ -87,7 +100,6 @@
 }
 
 .gear {
-  color: #585858;
   height: 1.5rem;
   width: 1.5rem;
 }
