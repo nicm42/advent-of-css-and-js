@@ -63,6 +63,8 @@
 }
 
 .timer {
+  caret-color: #585858;
+  caret-width: 1px;
   font-size: 4.25rem;
   line-height: 1;
   width: max-content;
@@ -73,6 +75,11 @@
 
   @include breakpoints.breakpoint-up(medium) {
     font-size: 12.25rem;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px dotted #585858;
   }
 }
 
@@ -86,6 +93,10 @@ button {
   &:hover,
   &:focus {
     color: #fff;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
