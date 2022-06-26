@@ -1,5 +1,12 @@
 import '../scss/styles.scss';
 
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
+
+
 // import './style.css';
 
 /* document.querySelector('#app').innerHTML = `
