@@ -13,12 +13,34 @@
     <title>Pomodoro Timer</title>
   </head>
   <body>
-    <main x-data="{timerStarted: false, editing: false}" id="app">
+    <main
+      x-data="{timerStarted: false, editing: false, minutes: '15', seconds: '00'}"
+      id="app"
+    >
       <svg class="border" viewBox="0 0 100 100">
         <circle class="black" cx="50%" cy="50%" r="50%" />
         <circle class="red-green" cx="50%" cy="50%" r="50%" />
       </svg>
-      <div contenteditable="true" class="timer">15:00</div>
+      <div class="timer">
+        <label for="minutes" class="visually-hidden">Minutes</label>
+        <input
+          id="minutes"
+          type="number"
+          maxlength="2"
+          x-bind:disabled="!editing"
+          x-model="minutes"
+        />
+        :
+        <label for="seconds" class="visually-hidden">Seconds</label>
+        <input
+          id="seconds"
+          type="number"
+          maxlength="2"
+          max="59"
+          x-bind:disabled="!editing"
+          x-model="seconds"
+        />
+      </div>
       <button
         x-on:click="timerStarted = !timerStarted"
         x-text="timerStarted ? 'Pause' : 'Start'"
@@ -26,7 +48,10 @@
       >
         Start
       </button>
-      <button x-on:click="editing = !editing">
+      <button
+        x-on:click="if(editing){minutes='13';seconds='59'}; editing = !editing"
+      >
+        <!-- TODO update x-data with the actual time in the inputs -->
         <svg
           x-show="!editing"
           class="gear"

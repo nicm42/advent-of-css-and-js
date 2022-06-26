@@ -24,6 +24,7 @@
 
   @include breakpoints.breakpoint-up(medium) {
     padding: 6.25em;
+    row-gap: 2em;
   }
 }
 
@@ -63,23 +64,47 @@
 }
 
 .timer {
-  caret-color: #585858;
-  caret-width: 1px;
-  font-size: 4.25rem;
+  --font-size: 4.25rem;
+  display: flex;
+  font-size: var(--font-size);
   line-height: 1;
-  width: max-content;
 
   @include breakpoints.breakpoint-up(small) {
-    font-size: 8.25rem;
+    --font-size: 8.25rem;
   }
 
   @include breakpoints.breakpoint-up(medium) {
-    font-size: 12.25rem;
+    --font-size: 12.25rem;
   }
 
-  &:focus {
-    outline: none;
-    border-bottom: 2px dotted #585858;
+  input {
+    -moz-appearance: textfield;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px dotted transparent;
+    box-sizing: border-box;
+    caret-color: #585858;
+    caret-width: 1px;
+    color: #fff;
+    display: inline;
+    font-family: inherit;
+    font-size: inherit;
+    width: calc(var(--font-size) * 0.85);
+
+    &#minutes {
+      text-align: right;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #585858;
+    }
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
 
