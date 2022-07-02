@@ -17,7 +17,17 @@
 
 This is from Advent of CSS/JS day 1.
 
-With the CSS I tried out alphabetical ordering.
+Brief:
+Users should be able to:
+
+- Start and Stop the Timer
+- Click on the gear icon to change the length (minutes and seconds) for the timer.
+
+And it should look like the Figma design given.
+
+> For the CSS I tried out alphabetical ordering.
+
+> For the JS I tried out Alpine JS.
 
 ## Screenshots
 
@@ -29,10 +39,11 @@ With the CSS I tried out alphabetical ordering.
 - HTML
 - SCSS
 - Vite
+- Alpine JS
 
 ## Learnings
 
-TBC
+Alpine JS
 
 ## Setup
 
