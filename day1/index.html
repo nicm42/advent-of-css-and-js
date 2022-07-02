@@ -13,10 +13,7 @@
     <title>Pomodoro Timer</title>
   </head>
   <body>
-    <main
-      x-data="{timerStarted: false, editing: false, minutes: '15', seconds: '00'}"
-      id="app"
-    >
+    <main x-data="countdown" id="app">
       <svg class="border" viewBox="0 0 100 100">
         <circle class="black" cx="50%" cy="50%" r="50%" />
         <circle class="red-green" cx="50%" cy="50%" r="50%" />
@@ -27,8 +24,9 @@
           id="minutes"
           type="number"
           maxlength="2"
+          x-bind:class="editing && 'add-border'"
           x-bind:disabled="!editing"
-          x-model="minutes"
+          x-model.lazy="minutes"
         />
         :
         <label for="seconds" class="visually-hidden">Seconds</label>
@@ -37,8 +35,9 @@
           type="number"
           maxlength="2"
           max="59"
+          x-bind:class="editing && 'add-border'"
           x-bind:disabled="!editing"
-          x-model="seconds"
+          x-model.lazy="seconds"
         />
       </div>
       <button
@@ -48,10 +47,7 @@
       >
         Start
       </button>
-      <button
-        x-on:click="if(editing){minutes='13';seconds='59'}; editing = !editing"
-      >
-        <!-- TODO update x-data with the actual time in the inputs -->
+      <button x-on:click="editing = !editing">
         <svg
           x-show="!editing"
           class="gear"
@@ -72,6 +68,14 @@
         </svg>
       </button>
     </main>
+
+    <!-- <footer>
+      <div x-data="countdown">
+        <button @click="toggle">Toggle Content</button>
+
+        <div x-show="open">Content...</div>
+      </div>
+    </footer> -->
     <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
