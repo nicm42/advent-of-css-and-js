@@ -91,13 +91,16 @@
     font-size: inherit;
     width: calc(var(--font-size) * 0.85);
 
-    &#minutes {
-      text-align: right;
+    &.add-border {
+      border-bottom: 2px dotted #585858;
+
+      &:focus {
+        outline: none;
+      }
     }
 
-    &:focus {
-      outline: none;
-      border-color: #585858;
+    &#minutes {
+      text-align: right;
     }
   }
 
