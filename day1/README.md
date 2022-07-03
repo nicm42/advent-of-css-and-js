@@ -47,7 +47,7 @@ Alpine JS
 
 ## Setup
 
-To view this project, download the files, open a terminal in that folder and install locally using npm:
+To view this project, visit the [demo](https://advent-of-css-and-js.pages.dev/) or download the files, open a terminal in that folder and install locally using npm:
 
 ```
 npm install
@@ -61,7 +61,7 @@ npm run dev
 
 ## Status
 
-Project is: _in progress_
+Project is: _finished_
 
 ## Inspiration
 
