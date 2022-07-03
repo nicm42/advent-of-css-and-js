@@ -13,7 +13,10 @@
     <title>Pomodoro Timer</title>
   </head>
   <body>
-    <main x-data="countdown" id="app">
+    <main
+      x-data="{timerStarted: false, editing: false, minutes: '15', seconds: '00', timer: ''}"
+      id="app"
+    >
       <svg class="border" viewBox="0 0 100 100">
         <circle class="black" cx="50%" cy="50%" r="50%" />
         <circle class="red-green" cx="50%" cy="50%" r="50%" />
@@ -41,11 +44,31 @@
         />
       </div>
       <button
-        x-on:click="timerStarted = !timerStarted"
-        x-text="timerStarted ? 'Pause' : 'Start'"
+        x-show="!timerStarted"
+        x-on:click="timerStarted = true; timer = setInterval(() => { 
+          if (seconds === '00') {
+            seconds = '59';
+            minutes = parseInt(minutes) - 1;
+            minutes = minutes.toString().padStart(2, '0');
+          } else {
+            seconds = parseInt(seconds) - 1;
+            seconds = seconds.toString().padStart(2, '0');
+          }
+          if (minutes === '00' && seconds === '00') {
+            timerStarted = false;
+            clearInterval(timer);
+          }
+        }, 1000)"
         class="start-stop"
       >
         Start
+      </button>
+      <button
+        x-show="timerStarted"
+        x-on:click="timerStarted = false; clearInterval(timer)"
+        class="start-stop"
+      >
+        Stop
       </button>
       <button x-on:click="editing = !editing">
         <svg
