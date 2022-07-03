@@ -14,12 +14,17 @@
   </head>
   <body>
     <main
-      x-data="{timerStarted: false, editing: false, minutes: '15', seconds: '00', timer: ''}"
+      x-data="{timerStarted: false, editing: false, minutes: '15', seconds: '00', finished: false, timer: ''}"
       id="app"
     >
       <svg class="border" viewBox="0 0 100 100">
         <circle class="black" cx="50%" cy="50%" r="50%" />
-        <circle class="red-green" cx="50%" cy="50%" r="50%" />
+        <circle
+          x-bind:class="finished ? 'red' : 'green'"
+          cx="50%"
+          cy="50%"
+          r="50%"
+        />
       </svg>
       <div class="timer">
         <label for="minutes" class="visually-hidden">Minutes</label>
@@ -56,6 +61,7 @@
           }
           if (minutes === '00' && seconds === '00') {
             timerStarted = false;
+            finished = true;
             clearInterval(timer);
           }
         }, 1000)"

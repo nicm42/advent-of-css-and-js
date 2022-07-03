@@ -55,10 +55,18 @@
       stroke: #000000;
     }
 
-    &.red-green {
-      stroke: variables.$red;
+    &.red,
+    &.green {
       stroke-dasharray: 250;
       stroke-dashoffset: 425;
+    }
+
+    &.red {
+      stroke: variables.$red;
+    }
+
+    &.green {
+      stroke: variables.$green;
     }
   }
 }
