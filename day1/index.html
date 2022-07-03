@@ -51,7 +51,7 @@
       <button
         x-show="!timerStarted"
         x-on:click="timerStarted = true; timer = setInterval(() => { 
-          if (seconds === '00') {
+          if (seconds === '00' || seconds === '0') {
             seconds = '59';
             minutes = parseInt(minutes) - 1;
             minutes = minutes.toString().padStart(2, '0');
@@ -59,7 +59,7 @@
             seconds = parseInt(seconds) - 1;
             seconds = seconds.toString().padStart(2, '0');
           }
-          if (minutes === '00' && seconds === '00') {
+          if ((minutes === '00' || minutes === '0') && (seconds === '00' || seconds === '0')) {
             timerStarted = false;
             finished = true;
             alert('Time\'s up');
