@@ -1,31 +1,60 @@
+<script>
+export default {
+  data() {
+    return {
+      meals: [
+        {
+          name: 'French Fries with Ketchup',
+          price: 2.23,
+          image: 'src/assets/plate__french-fries.png',
+        },
+        {
+          name: 'Salmon and Vegetables',
+          price: 5.12,
+          image: 'src/assets/plate__salmon-vegetables.png',
+        },
+        {
+          name: 'Spaghetti with Sauce',
+          price: 7.83,
+          image: 'src/assets/plate__spaghetti-meat-sauce.png',
+        },
+        {
+          name: 'Bacon and Eggs',
+          price: 3.34,
+          image: 'src/assets/plate__bacon-eggs.png',
+        },
+        {
+          name: 'Chicken Salad',
+          price: 4.5,
+          image: 'src/assets/plate__chicken-salad.png',
+        },
+        {
+          name: 'Fish Sticks and Fries',
+          price: 2.75,
+          image: 'src/assets/plate__fish-sticks-fries.png',
+        },
+        {
+          name: 'Ravioli',
+          price: 8.62,
+          image: 'src/assets/plate__ravioli.png',
+        },
+        {
+          name: 'Tortellini',
+          price: 6.12,
+          image: 'src/assets/plate__tortellini.png',
+        },
+      ],
+    };
+  },
+};
+</script>
+
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Meal from './components/Meal.vue';
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Meal v-for="meal of meals" v-bind="meal" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>
