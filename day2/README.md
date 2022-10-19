@@ -1,7 +1,80 @@
-# Vue 3 + Vite
+# eCommerce Component
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> A challenge to create an eCommerce component to match the figma design and requirements.
 
-## Recommended IDE Setup
+## Table of contents
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- [General info](#general-info)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Learnings](#learnings)
+- [Setup](#setup)
+- [Status](#status)
+- [Inspiration](#inspiration)
+- [Contact](#contact)
+
+## General info
+
+This is from Advent of CSS/JS day 2.
+
+Brief:
+Users should be able to:
+
+- View the plates on the left side of the screen and add them to your cart on the right side.
+- When there are no plates within your cart, you should see a message that says, "Your cart is empty."
+- When a plate is added to your cart, the Subtotal and Totals will automatically update.
+- When products are in your cart, you should be able to increase and decrease the quantity.
+  - A user should not be able to mark the quantity as a negative number.
+  - If the quantity goes down to 0, the user will have the option to delete or remove the product for their cart entirely.
+
+And it should look like the Figma design given.
+
+> For the CSS I tried out TBC.
+
+> For the JS I tried out Vue.
+
+## Screenshots
+
+TBC
+
+<!-- ![Screenshot](screenshot-desktop.png)
+![Screenshot](screenshot-mobile.png)
+ -->
+
+## Technologies
+
+- Vue
+- Vite
+
+## Learnings
+
+Vue
+
+## Setup
+
+TBC
+
+<!-- To view this project, visit the [demo](https://advent-of-css-and-js.pages.dev/) or download the files, open a terminal in that folder and install locally using npm:
+
+```
+npm install
+```
+
+Then run the app locally:
+
+```
+npm run dev
+``` -->
+
+## Status
+
+Project is: _in progress_
+
+## Inspiration
+
+- [Advent of CSS](https://www.adventofcss.com/)
+- [Advent of JS](https://www.adventofjs.com/)
+
+## Contact
+
+Created by [nicm42](https://twitter.com/nicm4242/) - feel free to contact me!
