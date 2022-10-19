@@ -2,46 +2,63 @@
 export default {
   data() {
     return {
+      counter: 0,
       meals: [
         {
+          id: 1,
           name: 'French Fries with Ketchup',
           price: 2.23,
           image: 'src/assets/plate__french-fries.png',
+          cart: 0,
         },
         {
+          id: 2,
           name: 'Salmon and Vegetables',
           price: 5.12,
           image: 'src/assets/plate__salmon-vegetables.png',
+          cart: 0,
         },
         {
+          id: 3,
           name: 'Spaghetti with Sauce',
           price: 7.83,
           image: 'src/assets/plate__spaghetti-meat-sauce.png',
+          cart: 0,
         },
         {
+          id: 4,
           name: 'Bacon and Eggs',
           price: 3.34,
           image: 'src/assets/plate__bacon-eggs.png',
+          cart: 0,
         },
         {
+          id: 5,
           name: 'Chicken Salad',
           price: 4.5,
           image: 'src/assets/plate__chicken-salad.png',
+          cart: 0,
         },
         {
+          id: 6,
           name: 'Fish Sticks and Fries',
           price: 2.75,
           image: 'src/assets/plate__fish-sticks-fries.png',
+          cart: 0,
         },
         {
+          id: 7,
           name: 'Ravioli',
           price: 8.62,
           image: 'src/assets/plate__ravioli.png',
+          cart: 0,
         },
         {
+          id: 8,
           name: 'Tortellini',
           price: 6.12,
           image: 'src/assets/plate__tortellini.png',
+          cart: 0,
         },
       ],
     };
@@ -51,10 +68,15 @@ export default {
 
 <script setup>
 import Meal from './components/Meal.vue';
+//import Child from './components/Child.vue';
 </script>
 
 <template>
-  <Meal v-for="meal of meals" v-bind="meal" />
+  <!-- <div>Parent Counter: {{ counter }}</div>
+  <Child v-model:counter="counter" /> -->
+  <h1>To Go Menu</h1>
+  <Meal v-for="meal of meals" v-bind="meal" :key="meal.id" />
+  <h1>Your Cart</h1>
 </template>
 
 <style scoped></style>

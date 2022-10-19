@@ -1,17 +1,28 @@
 <script setup>
+import { ref } from 'vue';
+
 const props = defineProps({
+  id: Number,
   name: String,
   price: Number,
   image: String,
+  cart: Number,
 });
 // console.log(props.name);
+
+const count = ref(0);
 </script>
 
 <template>
-  <img :src="image" :alt="name" />
-  <h2>{{ name }}</h2>
-  <p>${{ price }}</p>
-  <button>Add {{ name }} to Cart</button>
+  <div>
+    <img :src="image" :alt="name" />
+    <h2>{{ name }}</h2>
+    <p>${{ price }}</p>
+    <button v-show="count === 0" @click="count++">
+      Add to Cart {{ count }}
+    </button>
+    <button v-show="count > 0" @click="count++">In Cart {{ count }}</button>
+  </div>
 </template>
 
 <style scoped></style>
