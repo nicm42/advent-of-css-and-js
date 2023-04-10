@@ -8,6 +8,11 @@
   margin-bottom: 2rem;
 }
 
+.cart:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
 .info {
   display: flex;
   align-items: center;

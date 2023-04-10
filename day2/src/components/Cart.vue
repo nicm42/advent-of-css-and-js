@@ -14,6 +14,9 @@ export default {
       this.$emit('removeFromCart', id);
     },
   },
+  mounted() {
+    console.log(this.isLast);
+  },
 };
 </script>
 
@@ -25,6 +28,7 @@ const props = defineProps({
   image: String,
   cart: Number,
   colour: String,
+  isLast: Boolean,
 });
 </script>
 
@@ -55,5 +59,3 @@ const props = defineProps({
     </div>
   </div>
 </template>
-
-<style scoped></style>

@@ -88,6 +88,9 @@ export default {
     sumOfMeals() {
       return this.meals.reduce((total, meal) => meal.cart + total, 0);
     },
+    mealsToShow() {
+      return this.meals.filter((meal) => meal.cart > 0);
+    },
     totalPrice() {
       return this.meals.reduce(
         (total, meal) => meal.cart * meal.price + total,
@@ -117,14 +120,17 @@ import Cart from './components/Cart.vue';
     <div :class="styles.section">
       <h2 :class="styles.heading">Your Cart</h2>
       <p v-if="sumOfMeals === 0">Your cart is empty</p>
-      <div v-for="meal of meals">
-        <Cart
-          v-if="meal.cart > 0"
-          v-bind="meal"
-          :key="meal.id"
-          @addToCart="addToCart($event)"
-          @removeFromCart="removeFromCart($event)"
-        />
+      <div>
+        <template v-for="(meal, index) in meals">
+          <Cart
+            v-if="meal.cart > 0"
+            v-bind="meal"
+            :key="meal.id"
+            :is-last="index === mealsToShow.length - 1"
+            @addToCart="addToCart($event)"
+            @removeFromCart="removeFromCart($event)"
+          />
+        </template>
       </div>
       <hr :class="styles.line" v-if="sumOfMeals > 0" />
       <div :class="styles.totalPrice" v-if="sumOfMeals > 0">
