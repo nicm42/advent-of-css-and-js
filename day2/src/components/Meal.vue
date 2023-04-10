@@ -1,8 +1,14 @@
 <script>
 export default {
   name: 'Meal',
+  data() {
+    return {
+      hasBeenClicked: false,
+    };
+  },
   methods: {
     addToCart(id) {
+      this.hasBeenClicked = true;
       this.$emit('updateCart', id);
     },
   },
@@ -10,8 +16,6 @@ export default {
 </script>
 
 <script setup>
-import { ref } from 'vue';
-
 const props = defineProps({
   id: Number,
   name: String,
@@ -19,9 +23,6 @@ const props = defineProps({
   image: String,
   cart: Number,
 });
-// console.log(props.name);
-
-const count = ref(0);
 </script>
 
 <template>
@@ -29,11 +30,9 @@ const count = ref(0);
     <img :src="image" :alt="name" />
     <h2>{{ name }}</h2>
     <p>${{ price }}</p>
-    <!-- <button v-show="count === 0" @click="count++">
-      Add to Cart {{ count }}
+    <button :disabled="hasBeenClicked" @click="addToCart(id)">
+      {{ hasBeenClicked ? 'In Cart' : 'Add to Cart' }}
     </button>
-    <button v-show="count > 0" @click="count++">In Cart {{ count }}</button> -->
-    <button @click="addToCart(id)">Add to Cart</button>
   </div>
 </template>
 
