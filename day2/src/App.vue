@@ -63,6 +63,13 @@ export default {
       ],
     };
   },
+  methods: {
+    addToCart(id) {
+      let mealToUpdate = this.meals.find((meal) => meal.id === id);
+      let index = this.meals.indexOf(mealToUpdate);
+      this.meals[index].cart = 1;
+    },
+  },
 };
 </script>
 
@@ -75,7 +82,12 @@ import Meal from './components/Meal.vue';
   <!-- <div>Parent Counter: {{ counter }}</div>
   <Child v-model:counter="counter" /> -->
   <h1>To Go Menu</h1>
-  <Meal v-for="meal of meals" v-bind="meal" :key="meal.id" />
+  <Meal
+    v-for="meal of meals"
+    v-bind="meal"
+    :key="meal.id"
+    @updateCart="addToCart($event)"
+  />
   <h1>Your Cart</h1>
 </template>
 
