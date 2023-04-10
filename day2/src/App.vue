@@ -123,8 +123,8 @@ import Cart from './components/Cart.vue';
         @removeFromCart="removeFromCart($event)"
       />
     </div>
-    <hr :class="styles.line" />
-    <div :class="styles.totalPrice">
+    <hr :class="styles.line" v-if="sumOfMeals > 0" />
+    <div :class="styles.totalPrice" v-if="sumOfMeals > 0">
       <p :class="styles.total">Total:</p>
       <p :class="styles.price">${{ totalPrice }}</p>
     </div>
