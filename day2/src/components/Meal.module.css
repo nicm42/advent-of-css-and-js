@@ -10,7 +10,7 @@
 .meal::before {
   content: '';
   position: absolute;
-  width: 100%;
+  width: 110%;
   height: 85%;
   top: 1em;
   left: 0.75em;

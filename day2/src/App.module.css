@@ -1,12 +1,25 @@
 .setup {
-  background-color: #fff;
+  display: flex;
+  gap: 3.125em;
+  max-width: 800px;
+  margin-inline: auto;
   color: #000;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.1;
 }
 
+.section {
+  flex-basis: 50%;
+  padding-block: 3.125em;
+  padding-inline: 1.5em;
+  background-color: #fff;
+  border-radius: 1.5em;
+  box-shadow: 0 0 4.375em rgba(0, 0, 0, 0.1);
+}
+
 .heading {
+  margin-top: 0;
   margin-bottom: 1.25em;
   font-size: 2rem;
   line-height: 1.5;

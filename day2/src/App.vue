@@ -105,28 +105,32 @@ import Cart from './components/Cart.vue';
 
 <template>
   <div :class="styles.setup">
-    <h1 :class="styles.heading">To Go Menu</h1>
-    <Meal
-      v-for="meal of meals"
-      v-bind="meal"
-      :key="meal.id"
-      @addToCart="addToCart($event)"
-    />
-    <h2 :class="styles.heading">Your Cart</h2>
-    <p v-if="sumOfMeals === 0">Your cart is empty</p>
-    <div v-for="meal of meals">
-      <Cart
-        v-if="meal.cart > 0"
+    <div :class="styles.section">
+      <h1 :class="styles.heading">To Go Menu</h1>
+      <Meal
+        v-for="meal of meals"
         v-bind="meal"
         :key="meal.id"
         @addToCart="addToCart($event)"
-        @removeFromCart="removeFromCart($event)"
       />
     </div>
-    <hr :class="styles.line" v-if="sumOfMeals > 0" />
-    <div :class="styles.totalPrice" v-if="sumOfMeals > 0">
-      <p :class="styles.total">Total:</p>
-      <p :class="styles.price">${{ parseFloat(totalPrice).toFixed(2) }}</p>
+    <div :class="styles.section">
+      <h2 :class="styles.heading">Your Cart</h2>
+      <p v-if="sumOfMeals === 0">Your cart is empty</p>
+      <div v-for="meal of meals">
+        <Cart
+          v-if="meal.cart > 0"
+          v-bind="meal"
+          :key="meal.id"
+          @addToCart="addToCart($event)"
+          @removeFromCart="removeFromCart($event)"
+        />
+      </div>
+      <hr :class="styles.line" v-if="sumOfMeals > 0" />
+      <div :class="styles.totalPrice" v-if="sumOfMeals > 0">
+        <p :class="styles.total">Total:</p>
+        <p :class="styles.price">${{ parseFloat(totalPrice).toFixed(2) }}</p>
+      </div>
     </div>
   </div>
 </template>
