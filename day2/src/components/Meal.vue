@@ -23,21 +23,24 @@ const props = defineProps({
   price: Number,
   image: String,
   cart: Number,
+  colour: String,
 });
 </script>
 
 <template>
-  <div>
+  <div :class="styles.meal" :style="{ '--background-color': colour }">
     <img :class="styles.image" :src="image" :alt="name" />
-    <h2 :class="styles.name">{{ name }}</h2>
-    <p :class="styles.price">${{ price }}</p>
-    <button
-      :class="[{ [styles.inCart]: hasBeenClicked }, styles.button]"
-      :disabled="hasBeenClicked"
-      @click="addToCart(id)"
-    >
-      <img v-if="hasBeenClicked" src="../assets/check.svg" alt="" />
-      {{ hasBeenClicked ? 'In Cart' : 'Add to Cart' }}
-    </button>
+    <div>
+      <h2 :class="styles.name">{{ name }}</h2>
+      <p :class="styles.price">${{ price }}</p>
+      <button
+        :class="[{ [styles.inCart]: hasBeenClicked }, styles.button]"
+        :disabled="hasBeenClicked"
+        @click="addToCart(id)"
+      >
+        <img v-if="hasBeenClicked" src="../assets/check.svg" alt="" />
+        {{ hasBeenClicked ? 'In Cart' : 'Add to Cart' }}
+      </button>
+    </div>
   </div>
 </template>

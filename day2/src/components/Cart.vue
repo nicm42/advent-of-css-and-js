@@ -18,6 +18,7 @@ const props = defineProps({
   price: Number,
   image: String,
   cart: Number,
+  colour: String,
 });
 </script>
 

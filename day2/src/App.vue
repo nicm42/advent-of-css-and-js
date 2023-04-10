@@ -11,6 +11,7 @@ export default {
           price: 2.23,
           image: 'src/assets/plate__french-fries.png',
           cart: 0,
+          colour: 'rgba(122, 179, 243, 0.2)',
         },
         {
           id: 2,
@@ -18,6 +19,7 @@ export default {
           price: 5.12,
           image: 'src/assets/plate__salmon-vegetables.png',
           cart: 0,
+          colour: 'rgba(233, 121, 178, 0.2)',
         },
         {
           id: 3,
@@ -25,6 +27,7 @@ export default {
           price: 7.83,
           image: 'src/assets/plate__spaghetti-meat-sauce.png',
           cart: 0,
+          colour: 'rgba(215, 215, 249, 0.2)',
         },
         {
           id: 4,
@@ -32,6 +35,7 @@ export default {
           price: 3.34,
           image: 'src/assets/plate__bacon-eggs.png',
           cart: 0,
+          colour: 'rgba(120, 247, 187, 0.2)',
         },
         {
           id: 5,
@@ -39,6 +43,7 @@ export default {
           price: 4.5,
           image: 'src/assets/plate__chicken-salad.png',
           cart: 0,
+          colour: 'rgba(233, 121, 178, 0.6)',
         },
         {
           id: 6,
@@ -46,6 +51,7 @@ export default {
           price: 2.75,
           image: 'src/assets/plate__fish-sticks-fries.png',
           cart: 0,
+          colour: '#D7D7F9',
         },
         {
           id: 7,
@@ -53,6 +59,7 @@ export default {
           price: 8.62,
           image: 'src/assets/plate__ravioli.png',
           cart: 0,
+          colour: 'rgba(122, 179, 243, 0.2)',
         },
         {
           id: 8,
@@ -60,6 +67,7 @@ export default {
           price: 6.12,
           image: 'src/assets/plate__tortellini.png',
           cart: 0,
+          colour: 'rgba(233, 121, 178, 0.2)',
         },
       ],
     };
