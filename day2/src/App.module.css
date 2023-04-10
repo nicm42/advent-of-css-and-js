@@ -4,17 +4,13 @@
   gap: 3.125em;
   max-width: 800px;
   margin-inline: auto;
-  color: #000;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  line-height: 1.1;
 }
 
 .section {
   flex-basis: 50%;
   padding-block: 3.125em;
   padding-inline: 1.5em;
-  background-color: #fff;
+  background-color: var(--colour-white);
   border-radius: 1.5em;
   box-shadow: 0 0 4.375em rgba(0, 0, 0, 0.1);
 }
@@ -31,7 +27,7 @@
   margin-bottom: 2.25em;
   height: 5px;
   border: none;
-  background-color: #d7d7f9;
+  background-color: var(--colour-light-grey);
 }
 
 .totalPrice {
@@ -49,7 +45,7 @@
 
 .price {
   margin-block: 0;
-  color: #6b00f5;
+  color: var(--colour-purple);
   font-size: 2rem;
   font-weight: 700;
   line-height: 1;

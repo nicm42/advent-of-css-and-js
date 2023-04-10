@@ -4,7 +4,7 @@
   align-items: flex-start;
   gap: 1.25em;
   padding-bottom: 2.75em;
-  border-bottom: 1px solid #d7d7f9;
+  border-bottom: 1px solid var(--colour-light-grey);
   margin-bottom: 2rem;
 }
 
@@ -41,11 +41,11 @@
   left: 50%;
   transform: translateX(-50%);
   padding-inline: 9px;
-  color: #fff;
+  color: var(--colour-white);
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
-  background-color: #000;
+  background-color: var(--colour-black);
   border-radius: 50%;
 }
 
@@ -83,7 +83,7 @@
   padding: 6.5px 10px;
   border: none;
   border-radius: 1.25em;
-  background-color: #6b00f5;
+  background-color: var(--colour-purple);
   cursor: pointer;
 }
 

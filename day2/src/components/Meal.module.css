@@ -48,11 +48,11 @@
   gap: 0.5em;
   min-width: 140px;
   padding: 0.25em 1.125em;
-  color: #fff;
+  color: var(--colour-white);
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5;
-  background-color: #6b00f5;
+  background-color: var(--colour-purple);
   border: none;
   border-radius: 1.25em;
   cursor: pointer;
@@ -63,7 +63,7 @@
 }
 
 .inCart {
-  background-color: #000;
+  background-color: var(--colour-black);
 }
 
 @media screen and (min-width: 20em) {
