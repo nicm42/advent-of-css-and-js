@@ -27,34 +27,33 @@ Users should be able to:
   - A user should not be able to mark the quantity as a negative number.
   - If the quantity goes down to 0, the user will have the option to delete or remove the product for their cart entirely.
 
+(I ignored that last one since that's not how checkouts work. I also ignored the subtotal and tax as I don't understand that in America in real life)
+
 And it should look like the Figma design given.
 
-> For the CSS I tried out TBC.
+> For the CSS I tried out Css Modules.
 
 > For the JS I tried out Vue.
 
 ## Screenshots
 
-TBC
-
-<!-- ![Screenshot](screenshot-desktop.png)
+![Screenshot](screenshot-desktop.png)
 ![Screenshot](screenshot-mobile.png)
- -->
 
 ## Technologies
 
 - Vue
 - Vite
+- CSS Modules
 
 ## Learnings
 
 Vue
+CSS Modules
 
 ## Setup
 
-TBC
-
-<!-- To view this project, visit the [demo](https://advent-of-css-and-js.pages.dev/) or download the files, open a terminal in that folder and install locally using npm:
+To view this project, visit the [demo](https://advent-of-css-and-js.pages.dev/) or download the files, open a terminal in that folder and install locally using npm:
 
 ```
 npm install
@@ -64,11 +63,11 @@ Then run the app locally:
 
 ```
 npm run dev
-``` -->
+```
 
 ## Status
 
-Project is: _in progress_
+Project is: _finished_
 
 ## Inspiration
 
