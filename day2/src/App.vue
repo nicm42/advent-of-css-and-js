@@ -70,11 +70,17 @@ export default {
       this.meals[index].cart = 1;
     },
   },
+  computed: {
+    sumOfMeals() {
+      return this.meals.reduce((total, meal) => meal.cart + total, 0);
+    },
+  },
 };
 </script>
 
 <script setup>
 import Meal from './components/Meal.vue';
+import Cart from './components/Cart.vue';
 //import Child from './components/Child.vue';
 </script>
 
@@ -89,6 +95,12 @@ import Meal from './components/Meal.vue';
     @updateCart="addToCart($event)"
   />
   <h1>Your Cart</h1>
+  <p v-if="sumOfMeals === 0">Your cart is empty</p>
+  <div v-for="meal of meals">
+    <Cart v-if="meal.cart > 0" v-bind="meal" :key="meal.id" />
+  </div>
+  <hr />
+  <p>Total:</p>
 </template>
 
 <style scoped></style>
