@@ -36,6 +36,7 @@ const props = defineProps({
       :disabled="hasBeenClicked"
       @click="addToCart(id)"
     >
+      <img v-if="hasBeenClicked" src="../assets/check.svg" alt="" />
       {{ hasBeenClicked ? 'In Cart' : 'Add to Cart' }}
     </button>
   </div>
