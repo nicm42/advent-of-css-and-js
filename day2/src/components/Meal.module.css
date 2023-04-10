@@ -56,6 +56,10 @@
   cursor: pointer;
 }
 
+.button:disabled {
+  cursor: default;
+}
+
 .inCart {
   background-color: #000;
 }
