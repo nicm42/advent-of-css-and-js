@@ -92,12 +92,9 @@ export default {
 <script setup>
 import Meal from './components/Meal.vue';
 import Cart from './components/Cart.vue';
-//import Child from './components/Child.vue';
 </script>
 
 <template>
-  <!-- <div>Parent Counter: {{ counter }}</div>
-  <Child v-model:counter="counter" /> -->
   <h1>To Go Menu</h1>
   <Meal
     v-for="meal of meals"
