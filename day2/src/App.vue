@@ -104,15 +104,15 @@ import Cart from './components/Cart.vue';
 </script>
 
 <template>
-  <div :class="styles.font">
-    <h1>To Go Menu</h1>
+  <div :class="styles.setup">
+    <h1 :class="styles.heading">To Go Menu</h1>
     <Meal
       v-for="meal of meals"
       v-bind="meal"
       :key="meal.id"
       @addToCart="addToCart($event)"
     />
-    <h1>Your Cart</h1>
+    <h2 :class="styles.heading">Your Cart</h2>
     <p v-if="sumOfMeals === 0">Your cart is empty</p>
     <div v-for="meal of meals">
       <Cart
@@ -123,7 +123,10 @@ import Cart from './components/Cart.vue';
         @removeFromCart="removeFromCart($event)"
       />
     </div>
-    <hr />
-    <p>Total: ${{ totalPrice }}</p>
+    <hr :class="styles.line" />
+    <div :class="styles.totalPrice">
+      <p :class="styles.total">Total:</p>
+      <p :class="styles.price">${{ totalPrice }}</p>
+    </div>
   </div>
 </template>

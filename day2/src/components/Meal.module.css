@@ -4,6 +4,7 @@
   display: flex;
   align-items: flex-start;
   gap: 1.25em;
+  isolation: isolate;
 }
 
 .meal::before {
