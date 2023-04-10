@@ -53,7 +53,7 @@ CSS Modules
 
 ## Setup
 
-To view this project, visit the [demo](https://advent-of-css-and-js.pages.dev/) or download the files, open a terminal in that folder and install locally using npm:
+To view this project, visit the Demo TBC<!-- [Demo](https://advent-of-css-and-js.pages.dev/) --> or download the files, open a terminal in that folder and install locally using npm:
 
 ```
 npm install
