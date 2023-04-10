@@ -1,3 +1,24 @@
+.cart {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25em;
+  padding-bottom: 2.75em;
+  border-bottom: 1px solid #d7d7f9;
+  margin-bottom: 2rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.625em;
+}
+
 .image {
   width: 64px;
   max-width: 100%;

@@ -29,18 +29,27 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
+  <div :class="styles.cart">
     <img :class="styles.image" :src="image" :alt="name" />
-    <h2 :class="styles.name">{{ name }}</h2>
-    <p :class="styles.price">${{ price }}</p>
-    <button :class="styles.button" @click="removeFromCart(id)">
-      <img src="../assets/chevron.svg" alt="Decrease" />
-    </button>
-    <p :class="styles.items">{{ cart }}</p>
-    <button :class="[styles.button, styles.rotate]" @click="addToCart(id)">
-      <img src="../assets/chevron.svg" alt="Increase" />
-    </button>
-    <p :class="styles.total">${{ cart * price }}</p>
+    <div>
+      <h2 :class="styles.name">{{ name }}</h2>
+      <p :class="styles.price">${{ price }}</p>
+      <div :class="styles.info">
+        <div :class="styles.buttons">
+          <button :class="styles.button" @click="removeFromCart(id)">
+            <img src="../assets/chevron.svg" alt="Decrease" />
+          </button>
+          <p :class="styles.items">{{ cart }}</p>
+          <button
+            :class="[styles.button, styles.rotate]"
+            @click="addToCart(id)"
+          >
+            <img src="../assets/chevron.svg" alt="Increase" />
+          </button>
+        </div>
+        <p :class="styles.total">${{ cart * price }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
