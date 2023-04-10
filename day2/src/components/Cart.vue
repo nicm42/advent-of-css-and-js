@@ -30,7 +30,10 @@ const props = defineProps({
 
 <template>
   <div :class="styles.cart">
-    <img :class="styles.image" :src="image" :alt="name" />
+    <div :class="styles.imageContainer">
+      <img :class="styles.image" :src="image" :alt="name" />
+      <p :class="styles.itemOnImage">{{ cart }}</p>
+    </div>
     <div>
       <h2 :class="styles.name">{{ name }}</h2>
       <p :class="styles.price">${{ price }}</p>

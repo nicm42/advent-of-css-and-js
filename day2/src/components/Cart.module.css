@@ -19,10 +19,28 @@
   gap: 0.625em;
 }
 
+.imageContainer {
+  position: relative;
+}
+
 .image {
   width: 64px;
   max-width: 100%;
   object-fit: cover;
+}
+
+.itemOnImage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-inline: 9px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  background-color: #000;
+  border-radius: 50%;
 }
 
 .name {
@@ -60,6 +78,7 @@
   border: none;
   border-radius: 1.25em;
   background-color: #6b00f5;
+  cursor: pointer;
 }
 
 .rotate {
