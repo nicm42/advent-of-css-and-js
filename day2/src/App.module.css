@@ -1,5 +1,6 @@
 .setup {
   display: flex;
+  flex-direction: column;
   gap: 3.125em;
   max-width: 800px;
   margin-inline: auto;
@@ -52,4 +53,16 @@
   font-size: 2rem;
   font-weight: 700;
   line-height: 1;
+}
+
+@media screen and (min-width: 42em) {
+  .setup {
+    flex-direction: row;
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .section {
+    flex-basis: 50%;
+  }
 }
