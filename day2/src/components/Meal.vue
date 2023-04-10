@@ -1,6 +1,5 @@
 <script>
 export default {
-  name: 'Meal',
   data() {
     return {
       hasBeenClicked: false,
