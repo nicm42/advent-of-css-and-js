@@ -4,12 +4,10 @@ export default {
   data() {
     return {
       styles,
-      hasBeenClicked: false,
     };
   },
   methods: {
     addToCart(id) {
-      this.hasBeenClicked = true;
       this.$emit('addToCart', id);
     },
   },
@@ -34,12 +32,12 @@ const props = defineProps({
       <h2 :class="styles.name">{{ name }}</h2>
       <p :class="styles.price">${{ price }}</p>
       <button
-        :class="[{ [styles.inCart]: hasBeenClicked }, styles.button]"
-        :disabled="hasBeenClicked"
+        :class="[{ [styles.inCart]: cart > 0 }, styles.button]"
+        :disabled="cart > 0"
         @click="addToCart(id)"
       >
-        <img v-if="hasBeenClicked" src="../assets/check.svg" alt="" />
-        {{ hasBeenClicked ? 'In Cart' : 'Add to Cart' }}
+        <img v-if="cart > 0" src="../assets/check.svg" alt="" />
+        {{ cart > 0 ? 'In Cart' : 'Add to Cart' }}
       </button>
     </div>
   </div>
