@@ -8,7 +8,7 @@ export default {
   methods: {
     addToCart(id) {
       this.hasBeenClicked = true;
-      this.$emit('updateCart', id);
+      this.$emit('addToCart', id);
     },
   },
 };

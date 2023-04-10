@@ -67,7 +67,12 @@ export default {
     addToCart(id) {
       let mealToUpdate = this.meals.find((meal) => meal.id === id);
       let index = this.meals.indexOf(mealToUpdate);
-      this.meals[index].cart = 1;
+      this.meals[index].cart += 1;
+    },
+    removeFromCart(id) {
+      let mealToUpdate = this.meals.find((meal) => meal.id === id);
+      let index = this.meals.indexOf(mealToUpdate);
+      this.meals[index].cart -= 1;
     },
   },
   computed: {
@@ -98,12 +103,18 @@ import Cart from './components/Cart.vue';
     v-for="meal of meals"
     v-bind="meal"
     :key="meal.id"
-    @updateCart="addToCart($event)"
+    @addToCart="addToCart($event)"
   />
   <h1>Your Cart</h1>
   <p v-if="sumOfMeals === 0">Your cart is empty</p>
   <div v-for="meal of meals">
-    <Cart v-if="meal.cart > 0" v-bind="meal" :key="meal.id" />
+    <Cart
+      v-if="meal.cart > 0"
+      v-bind="meal"
+      :key="meal.id"
+      @addToCart="addToCart($event)"
+      @removeFromCart="removeFromCart($event)"
+    />
   </div>
   <hr />
   <p>Total: ${{ totalPrice }}</p>
