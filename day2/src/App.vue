@@ -126,7 +126,7 @@ import Cart from './components/Cart.vue';
     <hr :class="styles.line" v-if="sumOfMeals > 0" />
     <div :class="styles.totalPrice" v-if="sumOfMeals > 0">
       <p :class="styles.total">Total:</p>
-      <p :class="styles.price">${{ totalPrice }}</p>
+      <p :class="styles.price">${{ parseFloat(totalPrice).toFixed(2) }}</p>
     </div>
   </div>
 </template>

@@ -50,7 +50,7 @@ const props = defineProps({
             <img src="../assets/chevron.svg" alt="Increase" />
           </button>
         </div>
-        <p :class="styles.total">${{ cart * price }}</p>
+        <p :class="styles.total">${{ parseFloat(cart * price).toFixed(2) }}</p>
       </div>
     </div>
   </div>
