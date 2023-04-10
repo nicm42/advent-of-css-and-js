@@ -74,6 +74,12 @@ export default {
     sumOfMeals() {
       return this.meals.reduce((total, meal) => meal.cart + total, 0);
     },
+    totalPrice() {
+      return this.meals.reduce(
+        (total, meal) => meal.cart * meal.price + total,
+        0
+      );
+    },
   },
 };
 </script>
@@ -100,7 +106,7 @@ import Cart from './components/Cart.vue';
     <Cart v-if="meal.cart > 0" v-bind="meal" :key="meal.id" />
   </div>
   <hr />
-  <p>Total:</p>
+  <p>Total: ${{ totalPrice }}</p>
 </template>
 
 <style scoped></style>
