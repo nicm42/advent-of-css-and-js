@@ -1,8 +1,9 @@
 <script>
+import styles from './App.module.css';
 export default {
   data() {
     return {
-      counter: 0,
+      styles,
       meals: [
         {
           id: 1,
@@ -95,26 +96,26 @@ import Cart from './components/Cart.vue';
 </script>
 
 <template>
-  <h1>To Go Menu</h1>
-  <Meal
-    v-for="meal of meals"
-    v-bind="meal"
-    :key="meal.id"
-    @addToCart="addToCart($event)"
-  />
-  <h1>Your Cart</h1>
-  <p v-if="sumOfMeals === 0">Your cart is empty</p>
-  <div v-for="meal of meals">
-    <Cart
-      v-if="meal.cart > 0"
+  <div :class="styles.font">
+    <h1>To Go Menu</h1>
+    <Meal
+      v-for="meal of meals"
       v-bind="meal"
       :key="meal.id"
       @addToCart="addToCart($event)"
-      @removeFromCart="removeFromCart($event)"
     />
+    <h1>Your Cart</h1>
+    <p v-if="sumOfMeals === 0">Your cart is empty</p>
+    <div v-for="meal of meals">
+      <Cart
+        v-if="meal.cart > 0"
+        v-bind="meal"
+        :key="meal.id"
+        @addToCart="addToCart($event)"
+        @removeFromCart="removeFromCart($event)"
+      />
+    </div>
+    <hr />
+    <p>Total: ${{ totalPrice }}</p>
   </div>
-  <hr />
-  <p>Total: ${{ totalPrice }}</p>
 </template>
-
-<style scoped></style>

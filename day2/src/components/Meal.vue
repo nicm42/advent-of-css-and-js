@@ -1,7 +1,9 @@
 <script>
+import styles from './Meal.module.css';
 export default {
   data() {
     return {
+      styles,
       hasBeenClicked: false,
     };
   },
@@ -26,13 +28,15 @@ const props = defineProps({
 
 <template>
   <div>
-    <img :src="image" :alt="name" />
-    <h2>{{ name }}</h2>
-    <p>${{ price }}</p>
-    <button :disabled="hasBeenClicked" @click="addToCart(id)">
+    <img :class="styles.image" :src="image" :alt="name" />
+    <h2 :class="styles.name">{{ name }}</h2>
+    <p :class="styles.price">${{ price }}</p>
+    <button
+      :class="[{ [styles.inCart]: hasBeenClicked }, styles.button]"
+      :disabled="hasBeenClicked"
+      @click="addToCart(id)"
+    >
       {{ hasBeenClicked ? 'In Cart' : 'Add to Cart' }}
     </button>
   </div>
 </template>
-
-<style scoped></style>
