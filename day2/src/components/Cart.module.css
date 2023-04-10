@@ -1,0 +1,46 @@
+.image {
+  width: 64px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.name {
+  margin-block: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.price {
+  margin-block: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 2;
+}
+
+.items {
+  margin-block: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.total {
+  margin-block: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6.5px 10px;
+  border: none;
+  border-radius: 1.25em;
+  background-color: #6b00f5;
+}
+
+.rotate {
+  rotate: 180deg;
+}

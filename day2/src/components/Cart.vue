@@ -1,5 +1,11 @@
 <script>
+import styles from './Cart.module.css';
 export default {
+  data() {
+    return {
+      styles,
+    };
+  },
   methods: {
     addToCart(id) {
       this.$emit('addToCart', id);
@@ -24,13 +30,17 @@ const props = defineProps({
 
 <template>
   <div>
-    <img :src="image" :alt="name" />
-    <h2>{{ name }}</h2>
-    <p>${{ price }}</p>
-    <button @click="removeFromCart(id)">&lt;</button>
-    <p>{{ cart }}</p>
-    <button @click="addToCart(id)">&gt;</button>
-    <p>${{ cart * price }}</p>
+    <img :class="styles.image" :src="image" :alt="name" />
+    <h2 :class="styles.name">{{ name }}</h2>
+    <p :class="styles.price">${{ price }}</p>
+    <button :class="styles.button" @click="removeFromCart(id)">
+      <img src="../assets/chevron.svg" alt="Decrease" />
+    </button>
+    <p :class="styles.items">{{ cart }}</p>
+    <button :class="[styles.button, styles.rotate]" @click="addToCart(id)">
+      <img src="../assets/chevron.svg" alt="Increase" />
+    </button>
+    <p :class="styles.total">${{ cart * price }}</p>
   </div>
 </template>
 
