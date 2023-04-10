@@ -1,0 +1,7 @@
+:root {
+  background-color: #eff0f6;
+  background-image: url('./assets/bg__left.svg'),
+    url('./assets/bg__top-right.svg'), url('./assets/bg__btm-right.svg');
+  background-repeat: no-repeat;
+  background-position: left 10%, right top, right bottom;
+}
